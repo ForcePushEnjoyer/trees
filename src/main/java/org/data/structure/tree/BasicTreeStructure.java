@@ -13,7 +13,7 @@ public abstract class BasicTreeStructure<T> {
     private Integer size = 0;
 
     private BasicTreeStructure() {}
-    public BasicTreeStructure(Comparator<T> comparator) {
+    protected BasicTreeStructure(Comparator<T> comparator) {
         this();
         this.comparator = comparator;
     }
