@@ -6,7 +6,7 @@ public abstract class BasicTreeNode<T> {
     private BasicTreeNode<T> rightNode;
 
     private BasicTreeNode() {}
-    public BasicTreeNode(T data) {
+    protected BasicTreeNode(T data) {
         this();
         this.data = data;
     }
