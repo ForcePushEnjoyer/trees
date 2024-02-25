@@ -1,8 +1,5 @@
 package org.data.structure.tree;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-
 import java.util.Comparator;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -26,6 +23,9 @@ public abstract class BasicTreeStructure<T> {
     }
     public Integer getSize() {
         return this.size;
+    }
+    public BasicTreeNode<T> getRoot() {
+        return this.root;
     }
     public abstract Integer getHeight();
     public BasicTreeNode<T> getMinimalElement() {
