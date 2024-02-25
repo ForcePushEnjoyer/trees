@@ -27,6 +27,9 @@ public abstract class BasicTreeStructure<T> {
     public Integer getSize() {
         return this.size;
     }
+    public BasicTreeNode<T> getRoot() {
+        return this.root;
+    }
     public abstract Integer getHeight();
     public BasicTreeNode<T> getMinimalElement() {
         BasicTreeNode<T> lesserNode = this.root;
