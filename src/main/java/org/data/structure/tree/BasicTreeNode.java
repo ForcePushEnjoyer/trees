@@ -11,9 +11,6 @@ public abstract class BasicTreeNode<T> {
         this.data = data;
     }
 
-    public void removeData() {
-        this.data = null;
-    }
     public void removeLeftNode() {
         this.leftNode = null;
     }
