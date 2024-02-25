@@ -5,9 +5,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 public abstract class BasicTreeStructure<T> {
-    private Comparator<T> comparator;
-    private BasicTreeNode<T> root;
-    private Integer size = 0;
+    protected Comparator<T> comparator;
+    protected BasicTreeNode<T> root;
+    protected Integer size = 0;
 
     private BasicTreeStructure() {}
     protected BasicTreeStructure(Comparator<T> comparator) {
