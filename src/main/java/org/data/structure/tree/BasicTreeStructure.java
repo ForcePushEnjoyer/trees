@@ -8,8 +8,11 @@ public abstract class BasicTreeStructure<T> {
     protected Comparator<T> comparator;
     protected BasicTreeNode<T> root;
     protected Integer size = 0;
+    protected TreeService<T> treeService;
 
-    private BasicTreeStructure() {}
+    private BasicTreeStructure() {
+        this.treeService = new TreeService<>();
+    }
     protected BasicTreeStructure(Comparator<T> comparator) {
         this();
         this.comparator = comparator;
