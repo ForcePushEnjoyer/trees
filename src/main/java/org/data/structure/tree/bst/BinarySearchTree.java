@@ -1,41 +1,77 @@
 package org.data.structure.tree.bst;
 
+import org.data.structure.ComparisonResults;
+import org.data.structure.tree.BasicTreeNode;
+import org.data.structure.tree.BasicTreeStructure;
+
 import java.util.Comparator;
+import java.util.Objects;
+import java.util.function.Consumer;
 
-import org.data.structure.tree.BasicTreeInterface;
-
-public class BinarySearchTree<T> implements BasicTreeInterface<BinarySearchNode<T>> {
-    private Comparator<T> comparator;
-    private BinarySearchNode<T> root;
-
-    private BinarySearchTree() {}
+public class BinarySearchTree<T> extends BasicTreeStructure<T> {
     public BinarySearchTree(Comparator<T> comparator) {
-        this();
-        this.comparator = comparator;
-    }
-    public BinarySearchTree(Comparator<T> comparator, BinarySearchNode<T> root) {
-        this();
-        this.comparator = comparator;
-        this.root = root;
+        super(comparator);
     }
 
     @Override
-    public Boolean insert(BinarySearchNode<T> node) {
+    public Boolean insert(BasicTreeNode<T> node) {
         return null;
     }
 
     @Override
-    public Boolean contains(BinarySearchNode<T> node) {
+    public Boolean contains(BasicTreeNode<T> node) {
+        T dataOfNodeToBeChecked = node.getData();
+        BasicTreeNode<T> nodeToBeCompared = getRoot();
+
+        while (!Objects.isNull(nodeToBeCompared)) {
+            ComparisonResults comparisonResults = treeService.compareNodeData(
+                    dataOfNodeToBeChecked,
+                    nodeToBeCompared.getData(),
+                    comparator
+            );
+            switch (comparisonResults) {
+                case LESS -> nodeToBeCompared = nodeToBeCompared.getLeftNode();
+                case MORE -> nodeToBeCompared = nodeToBeCompared.getRightNode();
+                case EQUAL -> {
+                    return Boolean.TRUE;
+                }
+            }
+        }
+        return Boolean.FALSE;
+    }
+
+    @Override
+    public Boolean delete(BasicTreeNode<T> node) {
         return null;
     }
 
     @Override
-    public Boolean delete(BinarySearchNode<T> node) {
+    public Integer getHeight() {
         return null;
     }
 
     @Override
-    public Boolean isEmpty(BinarySearchNode<T> node) {
+    public void traverseInOrderAndPerformAction(Consumer<T> actionToPerform) {
+
+    }
+
+    @Override
+    public void traverseInPreOrderAndPerformAction(Consumer<T> actionToPerform) {
+
+    }
+
+    @Override
+    public void traverseInPostOrderAndPerformAction(Consumer<T> actionToPerform) {
+
+    }
+
+    @Override
+    public void traverseInLevelOrderAndPerformAction(Consumer<T> actionToPerform) {
+
+    }
+
+    @Override
+    public String toString() {
         return null;
     }
 }

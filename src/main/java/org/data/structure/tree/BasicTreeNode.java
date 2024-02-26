@@ -6,14 +6,11 @@ public abstract class BasicTreeNode<T> {
     private BasicTreeNode<T> rightNode;
 
     private BasicTreeNode() {}
-    public BasicTreeNode(T data) {
+    protected BasicTreeNode(T data) {
         this();
         this.data = data;
     }
 
-    public void removeData() {
-        this.data = null;
-    }
     public void removeLeftNode() {
         this.leftNode = null;
     }
